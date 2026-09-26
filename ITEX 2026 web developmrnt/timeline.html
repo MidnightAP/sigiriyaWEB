@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sigiriya Timeline</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f4f1e8;
+            color: #273746;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #101c25;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 8px 0;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e8bd72;
+        }
+
+        nav a.active {
+            color: #e8bd72;
+            border-bottom: 3px solid #e8bd72;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 85px 25px;
+
+            background:
+                linear-gradient(
+                    rgba(15, 31, 42, 0.72),
+                    rgba(15, 31, 42, 0.72)
+                ),
+                url("sigiriya-landscape.jpg") center/cover;
+
+            color: white;
+        }
+
+        .hero-small {
+            color: #e8bd72;
+            letter-spacing: 6px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            color: #eeeeee;
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            max-width: 900px;
+            margin: 65px auto;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            color: #62676b;
+            font-size: 17px;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            max-width: 1000px;
+            margin: 70px auto;
+            padding: 0 25px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: #d6ae65;
+
+            transform: translateX(-50%);
+        }
+
+        .event {
+            width: 50%;
+            padding: 15px 45px;
+            position: relative;
+        }
+
+        .event.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .event.right {
+            left: 50%;
+        }
+
+        .event::after {
+            content: "";
+
+            position: absolute;
+
+            top: 35px;
+
+            width: 18px;
+            height: 18px;
+
+            background: #d6ae65;
+
+            border: 4px solid #f4f1e8;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 2px #d6ae65;
+        }
+
+        .event.left::after {
+            right: -10px;
+        }
+
+        .event.right::after {
+            left: -10px;
+        }
+
+        .event-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 7px 25px rgba(0,0,0,0.09);
+
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.14);
+        }
+
+        .date {
+            color: #a47c32;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .event h3 {
+            font-size: 25px;
+
+            color: #273d4d;
+
+            margin: 6px 0 10px;
+        }
+
+        .event p {
+            color: #62676b;
+
+            font-size: 16px;
+        }
+
+        /* FINAL SECTION */
+
+        .ending {
+            max-width: 900px;
+
+            margin: 80px auto;
+
+            padding: 50px 30px;
+
+            text-align: center;
+
+            background: #172936;
+
+            color: white;
+
+            border-radius: 15px;
+        }
+
+        .ending h2 {
+            color: #e8bd72;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .ending p {
+            color: #e0e3e4;
+
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0d1921;
+
+            color: #bfc5c8;
+
+            text-align: center;
+
+            padding: 30px;
+
+            margin-top: 80px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            nav {
+                justify-content: center;
+
+                gap: 16px;
+
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .event,
+            .event.left,
+            .event.right {
+                width: 100%;
+
+                left: 0;
+
+                text-align: left;
+
+                padding-left: 50px;
+
+                padding-right: 5px;
+            }
+
+            .event.left::after,
+            .event.right::after {
+                left: 6px;
+
+                right: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="history.html">
+        History
+    </a>
+
+    <a href="features.html">
+        Features
+    </a>
+
+    <a href="timeline.html" class="active">
+        Timeline
+    </a>
+
+    <a href="gallery.html">
+        Gallery
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-small">
+        THROUGH THE AGES
+    </div>
+
+    <h1>
+        Sigiriya Timeline
+    </h1>
+
+    <p>
+        A journey through the major periods that shaped
+        Sigiriya from an ancient landscape into a world-famous
+        cultural landmark.
+    </p>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2>
+        A Journey Through Time
+    </h2>
+
+    <p>
+        Sigiriya has a history spanning many centuries. Its story
+        includes early human activity, Buddhist monastic use, the
+        royal transformation under King Kassapa I, its later decline,
+        archaeological rediscovery and its recognition as a UNESCO
+        World Heritage Site.
+    </p>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section class="timeline">
+
+
+    <!-- 1 -->
+
+    <div class="event left">
+
+        <div class="event-card">
+
+            <div class="date">
+                Early Period
+            </div>
+
+            <h3>
+                Early Human Activity
+            </h3>
+
+            <p>
+                The Sigiriya landscape was used by people long before
+                the famous royal complex was built. Archaeological
+                evidence shows that the surrounding area has a very
+                long history of human activity.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 2 -->
+
+    <div class="event right">
+
+        <div class="event-card">
+
+            <div class="date">
+                Around 3rd Century BCE
+            </div>
+
+            <h3>
+                Buddhist Monastic Activity
+            </h3>
+
+            <p>
+                Rock shelters around Sigiriya became associated with
+                Buddhist monastic communities. This demonstrates that
+                the area already had religious importance centuries
+                before the royal period.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 3 -->
+
+    <div class="event left">
+
+        <div class="event-card">
+
+            <div class="date">
+                477–495 CE
+            </div>
+
+            <h3>
+                King Kassapa I
+            </h3>
+
+            <p>
+                King Kassapa I transformed Sigiriya into a royal centre.
+                The enormous rock became the centre of a carefully
+                planned complex containing palaces, gardens,
+                fortifications and water systems.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 4 -->
+
+    <div class="event right">
+
+        <div class="event-card">
+
+            <div class="date">
+                5th Century CE
+            </div>
+
+            <h3>
+                The Royal Complex
+            </h3>
+
+            <p>
+                Sigiriya developed into an impressive royal landscape.
+                Its gardens, moats, pools, buildings, Lion Gateway,
+                frescoes and summit structures demonstrated remarkable
+                architectural and engineering skills.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 5 -->
+
+    <div class="event left">
+
+        <div class="event-card">
+
+            <div class="date">
+                After 495 CE
+            </div>
+
+            <h3>
+                The Monastic Period
+            </h3>
+
+            <p>
+                After the royal period ended, Sigiriya continued to be
+                associated with Buddhist monastic activity. Its
+                political importance declined, but the site remained
+                culturally and religiously significant.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 6 -->
+
+    <div class="event right">
+
+        <div class="event-card">
+
+            <div class="date">
+                Later Centuries
+            </div>
+
+            <h3>
+                The Mirror Wall
+            </h3>
+
+            <p>
+                Visitors continued to leave poems and observations on
+                the famous Mirror Wall. These inscriptions provide
+                valuable evidence about how later generations viewed
+                Sigiriya and its paintings.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 7 -->
+
+    <div class="event left">
+
+        <div class="event-card">
+
+            <div class="date">
+                19th–20th Centuries
+            </div>
+
+            <h3>
+                Archaeological Rediscovery
+            </h3>
+
+            <p>
+                Archaeologists and researchers began investigating
+                Sigiriya more systematically. Excavations and
+                conservation work revealed more about its architecture,
+                gardens, art and ancient water-management systems.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- 8 -->
+
+    <div class="event right">
+
+        <div class="event-card">
+
+            <div class="date">
+                1982
+            </div>
+
+            <h3>
+                UNESCO World Heritage Site
+            </h3>
+
+            <p>
+                The Ancient City of Sigiriya was added to the UNESCO
+                World Heritage List in 1982. It was recognised for its
+                exceptional cultural importance, including its
+                architecture, urban planning, art, landscape design
+                and engineering.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- ENDING -->
+
+<section class="ending">
+
+    <h2>
+        Sigiriya Through the Ages
+    </h2>
+
+    <p>
+        From an ancient landscape to a royal capital, from a later
+        monastic site to an internationally recognised archaeological
+        treasure, Sigiriya has continued to tell the story of Sri
+        Lanka's past. Its surviving monuments allow us to understand
+        the creativity, engineering and cultural achievements of
+        the people who shaped this remarkable site.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        Sigiriya • Through the Ages
+    </p>
+
+    <p>
+        Educational Website Project
+    </p>
+
+</footer>
+
+
+</body>
+</html>

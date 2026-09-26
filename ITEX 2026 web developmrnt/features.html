@@ -1,0 +1,1035 @@
+f<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Features of Sigiriya | The Lion Rock</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f2ec;
+            color: #283944;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background: #17252e;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 22px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e5b36c;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 520px;
+
+            background:
+                linear-gradient(
+                    rgba(15, 30, 40, 0.65),
+                    rgba(15, 30, 40, 0.72)
+                ),
+                url("sigiriya.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 68px;
+            margin: 0 0 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 15px 32px;
+            background: #e6b56f;
+            color: #182832;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #f2cb8f;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .intro {
+            max-width: 900px;
+            margin: 70px auto 40px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .small-title {
+            letter-spacing: 5px;
+            font-size: 13px;
+            color: #b38348;
+            font-weight: bold;
+        }
+
+        .intro h2 {
+            font-family: Georgia, serif;
+            font-size: 43px;
+            margin: 15px 0;
+            color: #334d5b;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #59666c;
+        }
+
+        /* =========================
+           FACT CARDS
+        ========================= */
+
+        .facts {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 25px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .fact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.16);
+        }
+
+        .fact-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .fact-card h3 {
+            color: #334d5b;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+        }
+
+        .fact-card p {
+            color: #68747a;
+            line-height: 1.6;
+        }
+
+        .fact-card strong {
+            color: #b38348;
+            font-size: 22px;
+        }
+
+        /* =========================
+           FEATURE SECTIONS
+        ========================= */
+
+        .feature-section {
+            max-width: 1100px;
+            margin: 90px auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .feature-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-image {
+            flex: 1;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 18px;
+
+            box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #334d5b;
+        }
+
+        .feature-text p {
+            font-size: 17px;
+            line-height: 1.85;
+            color: #59666c;
+        }
+
+        /* =========================
+           WORLD HERITAGE SECTION
+        ========================= */
+
+        .heritage {
+            background: #17252e;
+            color: white;
+            padding: 90px 25px;
+            margin-top: 100px;
+        }
+
+        .heritage-container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .heritage-title {
+            text-align: center;
+        }
+
+        .heritage-title .small-title {
+            color: #e6b56f;
+        }
+
+        .heritage-title h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin: 15px 0 35px;
+        }
+
+        .heritage-container p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #d9e0e3;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           UNESCO CRITERIA
+        ========================= */
+
+        .criteria {
+            max-width: 1000px;
+            margin: 70px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .criterion {
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .criterion h3 {
+            color: #e6b56f;
+            font-family: Georgia, serif;
+            font-size: 24px;
+        }
+
+        .criterion p {
+            font-size: 15px;
+            text-align: left;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline-section {
+            max-width: 950px;
+            margin: 100px auto;
+            padding: 0 25px;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 42px;
+            color: #334d5b;
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            border-left: 4px solid #d5a25e;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+        }
+
+        .timeline-item h3 {
+            color: #b38348;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            line-height: 1.8;
+            color: #59666c;
+            font-size: 17px;
+        }
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back {
+            text-align: center;
+            margin: 70px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            padding: 16px 35px;
+            background: #e6b56f;
+            color: #17252e;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back a:hover {
+            background: #f2cb8f;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #101b22;
+            color: #aeb8bd;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-section,
+            .feature-section.reverse {
+                flex-direction: column;
+            }
+
+            .criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-image img {
+                height: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="history.html">History</a>
+
+    <a href="features.html">Features</a>
+
+    <a href="timeline.html">Timeline</a>
+
+    <a href="gallery.html">Gallery</a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Features of Sigiriya</h1>
+
+        <p>
+            Explore the remarkable architecture, engineering, art,
+            gardens and history that make the Lion Rock one of
+            Sri Lanka's most extraordinary ancient sites.
+        </p>
+
+        <a href="#facts" class="hero-button">
+            Explore the Features
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="small-title">
+        THE LION ROCK
+    </div>
+
+    <h2>
+        A Masterpiece of Ancient Sri Lankan Civilization
+    </h2>
+
+    <p>
+        Sigiriya is far more than a massive rock. The site combines
+        architecture, urban planning, hydraulic engineering,
+        landscape design, painting and Buddhist heritage into one
+        extraordinary archaeological complex.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FACT CARDS
+========================= -->
+
+<section class="facts" id="facts">
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">⛰️</div>
+
+        <h3>Height</h3>
+
+        <p>
+            The rock rises approximately
+            <strong>180 m</strong>
+            above the surrounding plains.
+        </p>
+
+    </div>
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">👑</div>
+
+        <h3>King</h3>
+
+        <p>
+            Sigiriya became the capital of
+            <strong>King Kashyapa I</strong>,
+            whose reign is generally dated
+            to 477–495 CE.
+        </p>
+
+    </div>
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">📅</div>
+
+        <h3>Historical Period</h3>
+
+        <p>
+            The famous royal complex was
+            developed during the
+            <strong>5th century CE</strong>.
+        </p>
+
+    </div>
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">🌍</div>
+
+        <h3>UNESCO</h3>
+
+        <p>
+            Sigiriya was inscribed as a
+            <strong>World Heritage Site in 1982</strong>.
+        </p>
+
+    </div>
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">🏛️</div>
+
+        <h3>World Heritage Criteria</h3>
+
+        <p>
+            UNESCO inscribed Sigiriya under
+            criteria <strong>(ii), (iii) and (iv)</strong>.
+        </p>
+
+    </div>
+
+
+    <div class="fact-card">
+
+        <div class="fact-icon">💧</div>
+
+        <h3>Hydraulic Engineering</h3>
+
+        <p>
+            The complex contains sophisticated
+            ancient water-management systems,
+            pools, fountains and reservoirs.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     LION GATE
+========================= -->
+
+<section class="feature-section">
+
+    <div class="feature-image">
+
+        <img
+            src="sigiriya-lion-paws.jpg"
+            alt="Lion Paws at Sigiriya">
+
+    </div>
+
+
+    <div class="feature-text">
+
+        <div class="small-title">
+            ARCHITECTURE
+        </div>
+
+        <h2>
+            The Lion Gate
+        </h2>
+
+        <p>
+            One of Sigiriya's most recognisable features is the
+            monumental Lion Gate. Visitors climbing toward the
+            summit once passed through an enormous lion-shaped
+            entrance constructed from brick and plaster.
+        </p>
+
+        <p>
+            Today, the gigantic lion's paws remain beside the
+            staircase. They provide an impressive reminder of the
+            scale and ambition of the original entrance and explain
+            the name "Sigiriya", commonly associated with Lion Rock.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GARDENS
+========================= -->
+
+<section class="feature-section reverse">
+
+    <div class="feature-image">
+
+        <img
+            src="sigiriya-gardens.jpg"
+            alt="Sigiriya Gardens">
+
+    </div>
+
+
+    <div class="feature-text">
+
+        <div class="small-title">
+            LANDSCAPE ARCHITECTURE
+        </div>
+
+        <h2>
+            The Royal Gardens
+        </h2>
+
+        <p>
+            The gardens surrounding Sigiriya demonstrate an
+            extraordinary level of planning. The site combines
+            symmetrical water gardens with natural boulder gardens
+            and terraced landscapes.
+        </p>
+
+        <p>
+            Pools, channels, reservoirs and fountains were integrated
+            into the landscape. The gardens show that Sigiriya was
+            designed not simply as a fortress, but as a carefully
+            planned royal city and palace environment.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FRESCOES
+========================= -->
+
+<section class="feature-section">
+
+    <div class="feature-image">
+
+        <img
+            src="sigiriya-frescoes.jpg"
+            alt="Sigiriya Frescoes">
+
+    </div>
+
+
+    <div class="feature-text">
+
+        <div class="small-title">
+            ANCIENT ART
+        </div>
+
+        <h2>
+            The Sigiriya Frescoes
+        </h2>
+
+        <p>
+            Sigiriya is internationally famous for its ancient
+            paintings. The surviving frescoes portray graceful
+            female figures and demonstrate the artistic sophistication
+            of the period.
+        </p>
+
+        <p>
+            The paintings were originally part of a much larger
+            decorative programme on the rock face. Their survival
+            makes them an important part of Sri Lanka's artistic
+            heritage.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WATER ENGINEERING
+========================= -->
+
+<section class="feature-section reverse">
+
+    <div class="feature-image">
+
+        <img
+            src="sigiriya-landscape.jpg"
+            alt="Sigiriya Landscape">
+
+    </div>
+
+
+    <div class="feature-text">
+
+        <div class="small-title">
+            ANCIENT ENGINEERING
+        </div>
+
+        <h2>
+            Water Management
+        </h2>
+
+        <p>
+            One of Sigiriya's greatest achievements is its water
+            management system. Ancient builders incorporated
+            reservoirs, channels, pools and other hydraulic
+            structures into the gardens and surrounding city.
+        </p>
+
+        <p>
+            The engineering demonstrates how ancient Sri Lankan
+            builders were able to work with the natural landscape
+            while creating an elaborate royal environment.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WORLD HERITAGE ESSAY
+========================= -->
+
+<section class="heritage">
+
+    <div class="heritage-container">
+
+        <div class="heritage-title">
+
+            <div class="small-title">
+                UNESCO WORLD HERITAGE
+            </div>
+
+            <h2>
+                How Sigiriya Became a World Heritage Site
+            </h2>
+
+        </div>
+
+
+        <p>
+            Sigiriya's journey to becoming a World Heritage Site is
+            closely connected to the archaeological importance of
+            the ancient city and the remarkable evidence preserved
+            across the site. Although the rock is most strongly
+            associated with King Kashyapa I and the fifth-century
+            royal complex, archaeological evidence shows that the
+            area had a much longer history. Rock shelters and
+            inscriptions indicate that the surroundings were used
+            by Buddhist communities before Kashyapa's reign.
+        </p>
+
+
+        <p>
+            During the fifth century CE, Sigiriya was transformed
+            into a royal centre under King Kashyapa I. The natural
+            rock was incorporated into a carefully planned complex
+            containing a palace, fortifications, gardens, pools,
+            water systems and artistic decoration. The combination
+            of the natural landscape and human construction created
+            an unusually sophisticated urban environment. The
+            surviving remains provide evidence of advanced
+            planning, architecture, landscape design and hydraulic
+            engineering.
+        </p>
+
+
+        <p>
+            Sigiriya's artistic importance also contributed greatly
+            to its cultural significance. The surviving frescoes
+            demonstrate the skill of ancient Sri Lankan artists,
+            while inscriptions and graffiti on the Mirror Wall
+            provide evidence of later visitors and the changing
+            cultural history of the site. Together, the architecture,
+            paintings, gardens and written records make Sigiriya an
+            unusually rich archaeological site.
+        </p>
+
+
+        <p>
+            After the end of Kashyapa's reign, Sigiriya eventually
+            ceased to function as the royal capital. The site later
+            became associated with Buddhist monastic activity and
+            continued to have religious importance for centuries.
+            Over time, however, the complex was abandoned and much
+            of it became covered by vegetation. Archaeological
+            investigation and conservation later brought increasing
+            attention to the significance of the site.
+        </p>
+
+
+        <p>
+            In the twentieth century, archaeological research and
+            conservation helped reveal the scale and sophistication
+            of the ancient city. The importance of Sigiriya was not
+            based on one monument alone. Instead, its value came
+            from the relationship between the rock, palace,
+            fortifications, gardens, paintings, water systems and
+            archaeological remains. This combination provides
+            evidence of the achievements of ancient Sri Lankan
+            civilization.
+        </p>
+
+
+        <p>
+            In 1982, UNESCO inscribed the Ancient City of Sigiriya
+            on the World Heritage List. UNESCO recognised the site
+            under criteria (ii), (iii) and (iv). These criteria relate
+            to the exchange of human values, the testimony provided
+            by a cultural tradition or civilization, and an
+            outstanding example of architecture, technology or
+            landscape illustrating an important period of human
+            history.
+        </p>
+
+
+        <p>
+            Sigiriya therefore became a World Heritage Site because
+            its significance extends far beyond its spectacular
+            appearance. It preserves evidence of ancient urban
+            planning, royal architecture, hydraulic engineering,
+            landscape design, painting and religious history within
+            a single cultural landscape. Its preservation allows
+            future generations to study and appreciate the
+            achievements of the people who created and maintained
+            this extraordinary site. Today, its World Heritage
+            status reflects the international cultural importance of
+            the Ancient City of Sigiriya and the responsibility to
+            protect its archaeological remains for the future.
+        </p>
+
+
+        <!-- UNESCO CRITERIA -->
+
+        <div class="criteria">
+
+
+            <div class="criterion">
+
+                <h3>Criterion (ii)</h3>
+
+                <p>
+                    Sigiriya demonstrates important exchanges of
+                    human values in architecture, technology,
+                    landscape design and related cultural
+                    achievements.
+                </p>
+
+            </div>
+
+
+            <div class="criterion">
+
+                <h3>Criterion (iii)</h3>
+
+                <p>
+                    The archaeological remains provide important
+                    evidence of an ancient Sri Lankan civilization
+                    and its cultural traditions.
+                </p>
+
+            </div>
+
+
+            <div class="criterion">
+
+                <h3>Criterion (iv)</h3>
+
+                <p>
+                    The site represents an outstanding example of
+                    architecture, engineering and landscape design
+                    from an important period of human history.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TIMELINE
+========================= -->
+
+<section class="timeline-section">
+
+    <h2>
+        Sigiriya Through Time
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <h3>Before the 5th Century</h3>
+
+            <p>
+                The area around Sigiriya had already been used by
+                Buddhist communities. Archaeological evidence
+                includes ancient rock shelters and inscriptions.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>5th Century CE</h3>
+
+            <p>
+                King Kashyapa I established his royal centre at
+                Sigiriya and developed the palace, gardens,
+                fortifications and water systems.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>After Kashyapa</h3>
+
+            <p>
+                The royal capital eventually lost its political
+                importance and the site became associated with
+                Buddhist monastic activity.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>Modern Archaeology</h3>
+
+            <p>
+                Archaeological research revealed the extraordinary
+                planning, art, architecture and engineering of
+                the ancient city.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>1982</h3>
+
+            <p>
+                The Ancient City of Sigiriya was inscribed on the
+                UNESCO World Heritage List under criteria
+                (ii), (iii) and (iv).
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<div class="back">
+
+    <a href="index.html">
+        ← Back to Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    Sigiriya — The Lion Rock of Sri Lanka
+
+</footer>
+
+
+</body>
+
+</html>
