@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sigiriya | The Lion Rock of Sri Lanka</title>
+
+<style>
+
+/* ================================
+   BASIC SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f1e8;
+    color: #243126;
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    background: rgba(12, 25, 17, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s;
+}
+
+nav.scrolled {
+    padding: 13px 7%;
+    background: rgba(12, 25, 17, 0.97);
+}
+
+.logo {
+    font-family: Georgia, serif;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    color: #e9c46a;
+
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    position: relative;
+
+    padding: 8px 0;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e9c46a;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #e9c46a;
+
+    transform: translateX(-50%);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+
+    color: white;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.72)
+        ),
+        url("sigiriya.jpg") center/cover fixed;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 20%,
+            rgba(0,0,0,0.35)
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 950px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: fadeUp 1.5s ease;
+}
+
+.small-title {
+    color: #e9c46a;
+
+    letter-spacing: 6px;
+
+    font-size: 0.85rem;
+
+    margin-bottom: 22px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(3.5rem, 10vw, 8rem);
+
+    letter-spacing: 14px;
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.2),
+        0 10px 40px rgba(0,0,0,0.8);
+
+    animation: titleGlow 4s ease-in-out infinite alternate;
+}
+
+.hero h2 {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+
+    font-weight: normal;
+
+    margin-top: 25px;
+
+    color: #eee;
+}
+
+.hero-description {
+    max-width: 700px;
+
+    margin: 25px auto;
+
+    line-height: 1.9;
+
+    color: #eee;
+
+    font-size: 1rem;
+}
+
+
+/* ================================
+   HERO INFORMATION BOXES
+================================ */
+
+.hero-facts {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+.hero-fact {
+    min-width: 165px;
+
+    padding: 17px 20px;
+
+    background: rgba(255,255,255,0.10);
+
+    border: 1px solid rgba(233,196,106,0.4);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    transition: 0.4s;
+}
+
+.hero-fact:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255,255,255,0.17);
+
+    border-color: #e9c46a;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.hero-fact span {
+    font-size: 1.5rem;
+
+    margin-bottom: 7px;
+}
+
+.hero-fact strong {
+    color: #e9c46a;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+}
+
+.hero-fact small {
+    color: #ddd;
+
+    font-size: 0.7rem;
+
+    margin-top: 4px;
+}
+
+
+/* ================================
+   SCROLL INDICATOR
+================================ */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+
+    color: #e9c46a;
+
+    animation: bounce 2s infinite;
+
+    z-index: 3;
+}
+
+
+/* ================================
+   GENERAL SECTIONS
+================================ */
+
+section {
+    padding: 110px 9%;
+}
+
+.section-label {
+    text-align: center;
+
+    color: #a87924;
+
+    letter-spacing: 4px;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.section-title {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    margin: 12px 0 20px;
+
+    color: #203125;
+}
+
+.section-title::after {
+    content: "✦";
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #c99b38;
+
+    font-size: 1rem;
+}
+
+.section-intro {
+    max-width: 750px;
+
+    text-align: center;
+
+    margin: 0 auto 60px;
+
+    color: #667066;
+
+    line-height: 1.9;
+}
+
+
+/* ================================
+   INTRODUCTION
+================================ */
+
+.intro {
+    background: #f5f1e8;
+}
+
+.intro-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.intro-image {
+    height: 450px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.25)
+        ),
+        url("sigiriya-gardens.jpg") center/cover;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.18);
+
+    transition: 0.5s;
+}
+
+.intro-image:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.25);
+}
+
+.intro-text h3 {
+    font-family: Georgia, serif;
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    line-height: 1.9;
+
+    color: #606960;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   STATISTICS
+================================ */
+
+.stats {
+    background: #1c3324;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    text-align: center;
+}
+
+.stat {
+    padding: 25px;
+
+    transition: 0.4s;
+}
+
+.stat:hover {
+    transform: translateY(-7px);
+}
+
+.stat-number {
+    font-family: Georgia, serif;
+
+    font-size: 3.5rem;
+
+    color: #e9c46a;
+
+    font-weight: bold;
+}
+
+.stat p {
+    margin-top: 5px;
+
+    color: #cdd5ce;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    background: #fffdf8;
+}
+
+.cards {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    background: white;
+
+    padding: 35px 30px;
+
+    border-radius: 20px;
+
+    border: 1px solid #eee8d9;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.06);
+
+    transition: 0.45s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a87924,
+            #e9c46a,
+            #a87924
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: 0.45s;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #f5e6b8;
+
+    font-size: 1.6rem;
+
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+
+    margin-bottom: 15px;
+
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #687068;
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   TIMELINE
+================================ */
+
+.timeline-section {
+    background: #f0eadc;
+}
+
+.timeline {
+    max-width: 900px;
+
+    margin: 70px auto 0;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background: #c8a858;
+
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+
+    padding: 20px 50px;
+
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    width: 17px;
+
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: #c99b38;
+
+    top: 30px;
+
+    right: -8px;
+
+    border: 4px solid #f0eadc;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-year {
+    color: #a87924;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 0.8rem;
+}
+
+.timeline-item h3 {
+    font-family: Georgia, serif;
+
+    margin: 8px 0;
+}
+
+.timeline-item p {
+    color: #687068;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   GALLERY
+================================ */
+
+.gallery {
+    background: #17291d;
+
+    color: white;
+}
+
+.gallery .section-title {
+    color: white;
+}
+
+.gallery .section-intro {
+    color: #bbc5bd;
+}
+
+.gallery-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-auto-rows: 230px;
+
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.gallery-item:first-child {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+
+    filter: brightness(0.9);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.12);
+
+    filter: brightness(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 20px 20px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.9)
+        );
+
+    color: white;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition: 0.45s;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================================
+   FUN FACT
+================================ */
+
+.fact-section {
+    text-align: center;
+
+    background: #f5f1e8;
+}
+
+.fact-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 50px 35px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.08);
+}
+
+.fact-icon {
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+}
+
+#factText {
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    color: #4e584f;
+
+    min-height: 70px;
+
+    transition: 0.3s;
+}
+
+.fact-button {
+    border: none;
+
+    cursor: pointer;
+
+    margin-top: 25px;
+
+    padding: 13px 27px;
+
+    border-radius: 30px;
+
+    background: #203125;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.fact-button:hover {
+    background: #a87924;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   LOCATION
+================================ */
+
+.location {
+    background: #fffdf8;
+}
+
+.location-box {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.location-card {
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background: #f0eadc;
+}
+
+.location-card h3 {
+    font-family: Georgia, serif;
+
+    margin-bottom: 20px;
+}
+
+.location-card p {
+    color: #687068;
+
+    line-height: 1.9;
+}
+
+.map {
+    min-height: 300px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(20,50,30,0.7),
+            rgba(20,50,30,0.7)
+        ),
+        url("sri-lanka-map.jpg") center/cover;
+
+    color: white;
+}
+
+.map h2 {
+    font-size: 3rem;
+
+    margin-bottom: 10px;
+}
+
+.map h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #101e15;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+
+    color: #e9c46a;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 3px;
+}
+
+footer p {
+    color: #9da89f;
+
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   SCROLL TOP BUTTON
+================================ */
+
+#topBtn {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d0a345;
+
+    color: #152319;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+#topBtn.show {
+    opacity: 1;
+
+    pointer-events: all;
+}
+
+
+/* ================================
+   SCROLL ANIMATIONS
+================================ */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px) scale(0.98);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 10px rgba(255,255,255,0.15),
+            0 10px 30px rgba(0,0,0,0.7);
+    }
+
+    to {
+        text-shadow:
+            0 0 30px rgba(233,196,106,0.45),
+            0 10px 40px rgba(0,0,0,0.8);
+    }
+
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -10px);
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 17px 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px;
+
+        background: #142319;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero-facts {
+        gap: 10px;
+    }
+
+    .hero-fact {
+        min-width: 140px;
+
+        padding: 13px 15px;
+    }
+
+    .intro-grid,
+    .location-box {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+
+        width: 100%;
+
+        left: 0;
+
+        text-align: left;
+
+        padding-left: 45px;
+
+        padding-right: 10px;
+    }
+
+    .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+
+        left: 2px;
+
+        right: auto;
+    }
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 180px;
+    }
+
+    .gallery-item:first-child {
+
+        grid-column: span 2;
+
+        grid-row: span 1;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        letter-spacing: 5px;
+    }
+
+    .hero-facts {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-fact:last-child {
+
+        grid-column: span 2;
+    }
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item:first-child {
+
+        grid-column: span 1;
+    }
+
+    .intro-image {
+
+        height: 300px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION
+================================ -->
+
+<nav id="navbar">
+
+    <div class="logo">
+        SIGIRIYA
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="history.html">History</a>
+        </li>
+
+        <li>
+            <a href="features.html">Features</a>
+        </li>
+
+        <li>
+            <a href="timeline.html">Timeline</a>
+        </li>
+
+        <li>
+            <a href="gallery.html">Gallery</a>
+        </li>
+      
+
+    </ul>
+
+</nav>
+
+
+<!-- ================================
+     HERO
+================================ -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Sri Lanka's Ancient Heritage
+        </div>
+
+        <h1>
+            SIGIRIYA
+        </h1>
+
+        <h2>
+            The Lion Rock
+        </h2>
+
+        <p class="hero-description">
+
+            Discover one of Sri Lanka's most remarkable
+            archaeological wonders — an ancient fortress
+            rising dramatically above the surrounding landscape.
+
+        </p>
+
+
+        <div class="hero-facts">
+
+            <div class="hero-fact">
+
+                <span>🏛️</span>
+
+                <strong>
+                    UNESCO
+                </strong>
+
+                <small>
+                    World Heritage Site
+                </small>
+
+            </div>
+
+
+            <div class="hero-fact">
+
+                <span>📍</span>
+
+                <strong>
+                    MATALE
+                </strong>
+
+                <small>
+                    Central Sri Lanka
+                </small>
+
+            </div>
+
+
+            <div class="hero-fact">
+
+                <span>📜</span>
+
+                <strong>
+                    5th CENTURY
+                </strong>
+
+                <small>
+                    Ancient Royal Site
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+</section>
+
+
+<!-- ================================
+     INTRODUCTION
+================================ -->
+
+<section class="intro" id="history">
+
+    <div class="section-label reveal">
+        The Story
+    </div>
+
+    <h2 class="section-title reveal">
+        A Fortress Above the Clouds
+    </h2>
+
+    <p class="section-intro reveal">
+
+        Sigiriya is an ancient rock fortress and archaeological
+        site located in central Sri Lanka. Its dramatic rock,
+        sophisticated gardens and remarkable artwork make it
+        an important part of the island's cultural heritage.
+
+    </p>
+
+
+    <div class="intro-grid">
+
+        <div class="intro-image reveal">
+        </div>
+
+
+        <div class="intro-text reveal">
+
+            <h3>
+                The Lion Rock
+            </h3>
+
+            <p>
+
+                Rising approximately 180 metres above the
+                surrounding plains, Sigiriya dominates the
+                landscape of the surrounding area.
+
+            </p>
+
+            <p>
+
+                The site is particularly famous for its ancient
+                gardens, water-management systems, frescoes,
+                mirror wall and the enormous lion-paw structures
+                at the entrance.
+
+            </p>
+
+            <p>
+
+                Today, Sigiriya represents an extraordinary
+                combination of architecture, engineering,
+                art and natural landscape.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     STATISTICS
+================================ -->
+
+<section class="stats">
+
+    <div class="stat reveal">
+
+        <div class="stat-number" data-target="180">
+            0
+        </div>
+
+        <p>
+            Metres of Rock
+        </p>
+
+    </div>
+
+
+    <div class="stat reveal">
+
+        <div class="stat-number" data-target="1500">
+            0
+        </div>
+
+        <p>
+            Years of History
+        </p>
+
+    </div>
+
+
+    <div class="stat reveal">
+
+        <div class="stat-number" data-target="3">
+            0
+        </div>
+
+        <p>
+            Major Garden Areas
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     FEATURES
+================================ -->
+
+<section class="features" id="features">
+
+    <div class="section-label reveal">
+        Discover
+    </div>
+
+    <h2 class="section-title reveal">
+        What Makes Sigiriya Special?
+    </h2>
+
+    <p class="section-intro reveal">
+
+        From ancient engineering to extraordinary artwork,
+        Sigiriya contains many features that demonstrate
+        the creativity of its builders.
+
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🦁
+            </div>
+
+            <h3>
+                Lion's Paw
+            </h3>
+
+            <p>
+
+                The famous entrance to the upper rock is
+                associated with a monumental lion structure.
+                Today, the enormous stone paws remain beside
+                the staircase.
+
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🎨
+            </div>
+
+            <h3>
+                Ancient Frescoes
+            </h3>
+
+            <p>
+
+                Sigiriya is renowned for its surviving paintings,
+                which provide an important example of ancient
+                Sri Lankan artistic traditions.
+
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🌿
+            </div>
+
+            <h3>
+                Water Gardens
+            </h3>
+
+            <p>
+
+                The gardens include ponds, channels and carefully
+                planned water features that demonstrate
+                sophisticated landscape design.
+
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🪨
+            </div>
+
+            <h3>
+                Mirror Wall
+            </h3>
+
+            <p>
+
+                A polished wall beside the ancient pathway
+                contains historic inscriptions and graffiti
+                left by visitors over many centuries.
+
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🏯
+            </div>
+
+            <h3>
+                Rock Fortress
+            </h3>
+
+            <p>
+
+                The elevated rock provided a naturally dramatic
+                setting for a fortified royal complex and
+                architectural structures.
+
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-icon">
+                🌏
+            </div>
+
+            <h3>
+                World Heritage
+            </h3>
+
+            <p>
+
+                Sigiriya is recognised internationally for its
+                archaeological, architectural and cultural
+                importance.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     TIMELINE
+================================ -->
+
+<section class="timeline-section" id="timeline">
+
+    <div class="section-label reveal">
+        Through The Ages
+    </div>
+
+    <h2 class="section-title reveal">
+        Sigiriya Timeline
+    </h2>
+
+    <p class="section-intro reveal">
+
+        A simplified journey through some of the important
+        periods associated with the history of Sigiriya.
+
+    </p>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+            </div>
+
+            <div class="timeline-year">
+                5TH CENTURY
+            </div>
+
+            <h3>
+                Royal Complex
+            </h3>
+
+            <p>
+
+                Sigiriya became associated with King Kashyapa I,
+                who established a royal centre at the site.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+            </div>
+
+            <div class="timeline-year">
+                AFTER THE ROYAL PERIOD
+            </div>
+
+            <h3>
+                Monastic Use
+            </h3>
+
+            <p>
+
+                The site later became associated with Buddhist
+                monastic activity.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+            </div>
+
+            <div class="timeline-year">
+                19TH–20TH CENTURIES
+            </div>
+
+            <h3>
+                Archaeological Interest
+            </h3>
+
+            <p>
+
+                Sigiriya attracted increasing attention from
+                archaeologists and researchers.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+            </div>
+
+            <div class="timeline-year">
+                1982
+            </div>
+
+            <h3>
+                World Heritage
+            </h3>
+
+            <p>
+
+                Sigiriya was inscribed as a UNESCO World Heritage
+                Site because of its cultural significance.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     GALLERY
+================================ -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-label reveal">
+        Visual Journey
+    </div>
+
+    <h2 class="section-title reveal">
+       Sigiriya
+    </h2>
+
+    <p class="section-intro reveal">
+
+        A glimpse into the landscapes, architecture and heritage
+        surrounding the Lion Rock.
+
+    </p>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-item reveal">
+
+            <img
+                src="sigiriya.jpg"
+                alt="Sigiriya Rock"
+            >
+
+            <div class="gallery-caption">
+
+                <h3>
+                    The Lion Rock
+                </h3>
+
+                <p>
+                    The iconic rock fortress
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <img
+                src="sigiriya-gardens.jpg"
+                alt="Sigiriya Gardens"
+            >
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Royal Gardens
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <img
+                src="sigiriya-lion-paws.jpg"
+                alt="Lion Paws"
+            >
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Lion's Paw
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <img
+                src="sigiriya-frescoes.jpg"
+                alt="Sigiriya Frescoes"
+            >
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Ancient Frescoes
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <img
+                src="sigiriya-landscape.jpg"
+                alt="Sigiriya Landscape"
+            >
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Central Sri Lanka
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     FUN FACT
+================================ -->
+
+<section class="fact-section">
+
+    <div class="section-label reveal">
+        Test Your Knowledge
+    </div>
+
+    <h2 class="section-title reveal">
+        Did You Know?
+    </h2>
+
+
+    <div class="fact-box reveal">
+
+        <div class="fact-icon">
+            💡
+        </div>
+
+        <p id="factText">
+
+            Click the button below to discover an
+            interesting fact about Sigiriya.
+
+        </p>
+
+        <button
+            class="fact-button"
+            onclick="showFact()"
+        >
+
+            Reveal a Fact
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     LOCATION
+================================ -->
+
+<section class="location">
+
+    <div class="section-label reveal">
+        Find It
+    </div>
+
+    <h2 class="section-title reveal">
+        Where Is Sigiriya?
+    </h2>
+
+    <p class="section-intro reveal">
+
+        Sigiriya is located in the Cultural Triangle of Sri Lanka,
+        surrounded by the landscapes of the country's central region.
+
+    </p>
+
+
+    <div class="location-box">
+
+
+        <div class="location-card reveal">
+
+            <h3>
+                📍 Location
+            </h3>
+
+            <p>
+
+                Sigiriya is situated in the Matale District
+                of the Central Province of Sri Lanka.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                It is located near Dambulla and forms part of
+                Sri Lanka's famous Cultural Triangle.
+
+            </p>
+
+        </div>
+
+
+        <div class="map reveal">
+
+            <div>
+
+                <h2>
+                    🇱🇰
+                </h2>
+
+                <h3>
+                    Central Sri Lanka
+                </h3>
+
+                <p>
+                    Matale District
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+    <h2>
+        SIGIRIYA
+    </h2>
+
+    <p>
+        The Lion Rock • Sri Lanka
+    </p>
+
+    <br>
+
+    <p>
+        Created by Nejan
+    </p>
+
+</footer>
+
+
+<!-- ================================
+     SCROLL TO TOP
+================================ -->
+
+<button
+    id="topBtn"
+    onclick="scrollToTop()"
+>
+    ↑
+</button>
+
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+
+<script>
+
+
+/* ================================
+   MOBILE MENU
+================================ */
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("open");
+
+}
+
+
+/* ================================
+   NAVIGATION ON SCROLL
+================================ */
+
+const navbar =
+    document.getElementById("navbar");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 50) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* ================================
+   SCROLL REVEAL
+================================ */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+function revealElements() {
+
+    reveals.forEach(function(element) {
+
+        const windowHeight =
+            window.innerHeight;
+
+        const elementTop =
+            element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    revealElements
+);
+
+revealElements();
+
+
+/* ================================
+   ANIMATED STATISTICS
+================================ */
+
+const counters =
+    document.querySelectorAll(".stat-number");
+
+let countersStarted = false;
+
+function startCounters() {
+
+    if (countersStarted) {
+        return;
+    }
+
+    const statsSection =
+        document.querySelector(".stats");
+
+    const position =
+        statsSection.getBoundingClientRect().top;
+
+    if (position < window.innerHeight - 100) {
+
+        countersStarted = true;
+
+        counters.forEach(function(counter) {
+
+            const target =
+                Number(counter.dataset.target);
+
+            let current = 0;
+
+            const increment =
+                target / 80;
+
+            function updateCounter() {
+
+                current += increment;
+
+                if (current < target) {
+
+                    counter.textContent =
+                        Math.floor(current);
+
+                    requestAnimationFrame(
+                        updateCounter
+                    );
+
+                } else {
+
+                    counter.textContent =
+                        target + "+";
+
+                }
+
+            }
+
+            updateCounter();
+
+        });
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    startCounters
+);
+
+
+/* ================================
+   RANDOM FACTS
+================================ */
+
+const facts = [
+
+    "Sigiriya rises approximately 180 metres above the surrounding landscape.",
+
+    "Sigiriya is located in Sri Lanka's Cultural Triangle.",
+
+    "The site contains ancient gardens and sophisticated water-management features.",
+
+    "The famous entrance is associated with enormous stone lion paws.",
+
+    "Sigiriya contains remarkable examples of ancient Sri Lankan art.",
+
+    "The site became a UNESCO World Heritage Site in 1982."
+
+];
+
+
+function showFact() {
+
+    const factText =
+        document.getElementById("factText");
+
+    const randomNumber =
+        Math.floor(
+            Math.random() * facts.length
+        );
+
+    factText.style.opacity = "0";
+
+    setTimeout(function() {
+
+        factText.textContent =
+            facts[randomNumber];
+
+        factText.style.opacity = "1";
+
+    }, 200);
+
+}
+
+
+/* ================================
+   SCROLL TO TOP
+================================ */
+
+const topButton =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 500) {
+
+        topButton.classList.add("show");
+
+    } else {
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+
+function scrollToTop() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* ================================
+   CLOSE MOBILE MENU
+================================ */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("open");
+
+            }
+        );
+
+    });
+
+
+</script>
+
+</body>
+
+</html>

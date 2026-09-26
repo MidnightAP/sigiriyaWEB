@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Sigiriya | Gallery</title>
+
+
+<style>
+
+/* ================================
+   BASIC SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f5f1e8;
+
+    color: #243356;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 18px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(12, 25, 17, 0.97);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.logo {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    color: #e9c46a;
+
+    letter-spacing: 3px;
+
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    background: #e9c46a;
+
+    color: #17291d;
+
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.gallery-hero {
+
+    min-height: 45vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.75)
+        ),
+
+        url("sigiriya.jpg")
+        center/cover fixed;
+
+}
+
+
+.gallery-hero-content {
+
+    max-width: 900px;
+
+    padding: 30px;
+
+}
+
+
+.gallery-hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    letter-spacing: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.gallery-hero p {
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #eeeeee;
+
+}
+
+
+.gold {
+
+    color: #e9c46a;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ================================
+   GALLERY CONTAINER
+================================ */
+
+.gallery-container {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 90px 30px;
+
+}
+
+
+/* ================================
+   CATEGORY
+================================ */
+
+.category {
+
+    margin-bottom: 90px;
+
+}
+
+
+.category-title {
+
+    font-family: Georgia, serif;
+
+    font-size: 2.4rem;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    color: #203125;
+
+}
+
+
+.category-description {
+
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+
+    color: #687068;
+
+    line-height: 1.8;
+
+}
+
+
+/* ================================
+   IMAGE GRID
+================================ */
+
+.photo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* ================================
+   PHOTO
+================================ */
+
+.photo {
+
+    height: 270px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    background: #ddd;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.12);
+
+    transition: 0.4s;
+
+}
+
+
+.photo:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.20);
+
+}
+
+
+.photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s;
+
+}
+
+
+.photo:hover img {
+
+    transform: scale(1.1);
+
+}
+
+
+/* ================================
+   CAPTION
+================================ */
+
+.caption {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 35px 18px 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.85)
+        );
+
+}
+
+
+.caption h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.2rem;
+
+}
+
+
+.caption p {
+
+    margin-top: 5px;
+
+    font-size: 0.8rem;
+
+    color: #dddddd;
+
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    background: #101e15;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+}
+
+
+footer h2 {
+
+    font-family: Georgia, serif;
+
+    color: #e9c46a;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+footer p {
+
+    color: #9da89f;
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    nav {
+
+        padding: 15px 5%;
+
+    }
+
+    .photo-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .photo {
+
+        height: 250px;
+
+    }
+
+    .gallery-container {
+
+        padding: 60px 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION
+================================ -->
+
+<nav>
+
+    <div class="logo">
+        SIGIRIYA
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================================
+     GALLERY HERO
+================================ -->
+
+<header class="gallery-hero">
+
+    <div class="gallery-hero-content">
+
+        <div class="gold">
+            Visual Journey
+        </div>
+
+        <h1>
+            SIGIRIYA
+        </h1>
+
+        <p>
+            Explore the ancient fortress, gardens,
+            artwork, architecture and landscapes
+            of Sri Lanka's Lion Rock.
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================================
+     GALLERY
+================================ -->
+
+<main class="gallery-container">
+
+
+<!-- ================================
+     CATEGORY 1
+================================ -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🦁 The Lion Rock
+    </h2>
+
+    <p class="category-description">
+
+        Discover the dramatic rock fortress and
+        the surrounding archaeological landscape.
+
+    </p>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image01.jpg"
+            alt="Sigiriya Rock">
+
+            <div class="caption">
+                <h3>The Lion Rock</h3>
+                <p>Sigiriya's iconic fortress</p>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image02.jpg"
+            alt="Sigiriya Rock">
+
+            <div class="caption">
+                <h3>Sigiriya From Above</h3>
+                <p>The ancient rock rising above the forest</p>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image03.jpg"
+            alt="Sigiriya">
+
+            <div class="caption">
+                <h3>Ancient Fortress</h3>
+                <p>The archaeological complex (made using AI)</p>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image04.jpg"
+            alt="Sigiriya landscape">
+
+            <div class="caption">
+                <h3>Rock Landscape</h3>
+                <p>Central Sri Lanka</p>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image05.jpg"
+            alt="Sigiriya entrance">
+
+            <div class="caption">
+                <h3>Path to the Summit</h3>
+                <p>The journey towards the rock</p>
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <img src="gallery-images/image06.jpg"
+            alt="Sigiriya view">
+
+            <div class="caption">
+                <h3>View of Sigiriya</h3>
+                <p>The fortress landscape</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     CATEGORY 2
+================================ -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🌿 Royal Gardens
+    </h2>
+
+    <p class="category-description">
+
+        Explore the ancient gardens, ponds and
+        sophisticated water-management systems.
+
+    </p>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+            <img src="gallery-images/image07.jpg"
+            alt="Sigiriya gardens">
+
+            <div class="caption">
+                <h3>Water Gardens</h3>
+                <p>Ancient landscape design</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image08.jpg"
+            alt="Sigiriya gardens">
+
+            <div class="caption">
+                <h3>Royal Gardens</h3>
+                <p>Gardens surrounding the fortress</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image09.jpg"
+            alt="Sigiriya pond">
+
+            <div class="caption">
+                <h3>Ancient Ponds</h3>
+                <p>Water features of Sigiriya</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image10.jpg"
+            alt="Sigiriya gardens">
+
+            <div class="caption">
+                <h3>Garden Pathways</h3>
+                <p>Paths through the ancient complex</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image11.jpg"
+            alt="Sigiriya landscape">
+
+            <div class="caption">
+                <h3>Garden Landscape</h3>
+                <p>Nature surrounding the fortress</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image12.jpg"
+            alt="Sigiriya water gardens">
+
+            <div class="caption">
+                <h3>Water Features</h3>
+                <p>Ancient engineering</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     CATEGORY 3
+================================ -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🎨 Frescoes & Ancient Art
+    </h2>
+
+    <p class="category-description">
+
+        View the famous artwork and artistic
+        heritage associated with Sigiriya.
+
+    </p>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+            <img src="gallery-images/image13.jpg"
+            alt="Sigiriya fresco">
+
+            <div class="caption">
+                <h3>Sigiriya Frescoes</h3>
+                <p>Ancient Sri Lankan artwork</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image14.jpg"
+            alt="Sigiriya artwork">
+
+            <div class="caption">
+                <h3>Ancient Artwork</h3>
+                <p>Paintings from the rock</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image15.jpg"
+            alt="Sigiriya frescoes">
+
+            <div class="caption">
+                <h3>Fresco Gallery</h3>
+                <p>Historic artistic traditions</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image16.jpg"
+            alt="Sigiriya paintings">
+
+            <div class="caption">
+                <h3>Wall Paintings</h3>
+                <p>Surviving ancient artwork</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image17.jpg"
+            alt="Sigiriya Mirror Wall">
+
+            <div class="caption">
+                <h3>Mirror Wall</h3>
+                <p>Historic inscriptions and graffiti</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image18.jpg"
+            alt="Sigiriya ancient art">
+
+            <div class="caption">
+                <h3>Ancient Heritage</h3>
+                <p>Artistic history of Sigiriya</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     CATEGORY 4
+================================ -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🪨 Architecture & Lion's Paw
+    </h2>
+
+    <p class="category-description">
+
+        Explore the remarkable architectural
+        features of the ancient fortress.
+
+    </p>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+            <img src="gallery-images/image19.jpg"
+            alt="Lion's Paw">
+
+            <div class="caption">
+                <h3>Lion's Paw</h3>
+                <p>The famous entrance</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image20.jpg"
+            alt="Sigiriya staircase">
+
+            <div class="caption">
+                <h3>Ancient Stairway</h3>
+                <p>Path towards the summit</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image21.jpg"
+            alt="Sigiriya architecture">
+
+            <div class="caption">
+                <h3>Rock Architecture</h3>
+                <p>Structures built around the rock</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image22.jpg"
+            alt="Sigiriya ruins">
+
+            <div class="caption">
+                <h3>Ancient Ruins</h3>
+                <p>Remains of the royal complex</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image23.jpg"
+            alt="Sigiriya staircase">
+
+            <div class="caption">
+                <h3>Stone Stairway</h3>
+                <p>Architecture of the fortress</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image24.jpg"
+            alt="Sigiriya fortress">
+
+            <div class="caption">
+                <h3>Fortress Structures</h3>
+                <p>Archaeological remains</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     CATEGORY 5
+================================ -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🌅 Landscape & Surroundings
+    </h2>
+
+    <p class="category-description">
+
+        Experience the forests, plains and spectacular
+        landscapes surrounding Sigiriya.
+
+    </p>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+            <img src="gallery-images/image25.jpg"
+            alt="Sigiriya landscape">
+
+            <div class="caption">
+                <h3>Forest Landscape</h3>
+                <p>The jungle surrounding Sigiriya</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image26.jpg"
+            alt="Sigiriya sunset">
+
+            <div class="caption">
+                <h3>Sunset Over Sigiriya</h3>
+                <p>The rock at sunset</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image27.jpg"
+            alt="Sigiriya view">
+
+            <div class="caption">
+                <h3>Panoramic View</h3>
+                <p>The surrounding landscape</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image28.jpg"
+            alt="Sigiriya from distance">
+
+            <div class="caption">
+                <h3>Sigiriya From Afar</h3>
+                <p>The rock above the forest</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image29.jpg"
+            alt="Sigiriya nature">
+
+            <div class="caption">
+                <h3>Nature Around Sigiriya</h3>
+                <p>The natural environment</p>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="gallery-images/image30.jpg"
+            alt="Sigiriya panorama">
+
+            <div class="caption">
+                <h3>Sigiriya Panorama</h3>
+                <p>A final view of the Lion Rock</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+    <h2>
+        SIGIRIYA
+    </h2>
+
+    <p>
+        The Lion Rock • Sri Lanka
+    </p> 
+
+    <br>
+
+    <p>
+        Created by Nejan
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
